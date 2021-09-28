@@ -13,14 +13,15 @@
           class="is-flex is-align-items-center is-justify-content-center"
         >
           <div class="has-text-centered">
-            <h1 class="title has-text-white">
-              Order Now
+            <img src="/img/logoLight.svg" style="max-width: 250px">
+            <h1 class="mt-5 title has-text-white">
+              Wholesome Takeaway Meals
             </h1>
             <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
-              Pick up fresh, made-to-eat in Balmain
+              Fresh-made meals, picked up in Balmain. <br>Gluten-free and Vegan options available.
             </p>
-            <b-button class="mt-2" tag="router-link" to="#secondPage">
-              Start Now
+            <b-button type="is-primary is-large" inverted outlined>
+              Order Now
             </b-button>
           </div>
         </div>
@@ -28,11 +29,9 @@
       <div
         style="background-color: black;"
         class="section"
-      >
-        Second section ...
-      </div>
-      <div style="background-color: black;" class="section">
-        Second section ...
+      />
+      <div style="background-color: white;" class="section">
+        <Dish />
       </div>
       <div style="background-color: black;" class="section">
         Second section ...
@@ -42,7 +41,11 @@
 </template>
 
 <script>
+import Dish from '~/components/Dish.vue'
 export default {
+  components: {
+    Dish
+  },
   layout: 'default',
   metaInfo: {
     title: 'Hello, world!'
