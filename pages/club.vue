@@ -30,9 +30,7 @@
         style="background-color: black;"
         class="section"
       />
-      <div style="background-color: white;" class="section">
-        <Dish />
-      </div>
+      <div style="background-color: white;" class="section" />
       <div style="background-color: black;" class="section">
         Second section ...
       </div>
@@ -41,10 +39,9 @@
 </template>
 
 <script>
-import Dish from '~/components/Dish.vue'
 export default {
   components: {
-    Dish
+
   },
   layout: 'default',
   metaInfo: {
