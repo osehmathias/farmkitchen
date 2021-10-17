@@ -2,17 +2,17 @@
   <div>
     <Menu />
     <Nuxt />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
 import Menu from '@/components/Menu.vue'
-import Footer from '@/components/Footer.vue'
+// import Footer from '@/components/Footer.vue'
 export default {
   components: {
-    Menu,
-    Footer
+    Menu
+    // Footer
   }
 }
 </script>

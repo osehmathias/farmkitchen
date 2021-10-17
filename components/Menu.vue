@@ -11,25 +11,19 @@
     </template>
 
     <template #end>
-      <b-navbar-item href="#">
-        Nursery
-      </b-navbar-item>
-      <b-navbar-item href="#">
-        Cafe
-      </b-navbar-item>
-      <b-navbar-item href="#">
+      <b-navbar-item href="/functions">
         Functions
       </b-navbar-item>
-      <b-navbar-item href="#">
+      <b-navbar-item href="/contact">
         Contact
       </b-navbar-item>
-      <b-navbar-item tag="div">
+      <!-- <b-navbar-item tag="div">
         <div class="buttons">
-          <a class="button is-success is-light has-text-weight-bold">
+          <a  class="button is-success is-light has-text-weight-bold">
             Order Now
           </a>
         </div>
-      </b-navbar-item>
+      </b-navbar-item> -->
     </template>
   </b-navbar>
 </template>

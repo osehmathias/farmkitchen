@@ -11,15 +11,25 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@aws-amplify/cli": "^4.13.2",
+    "@aws-amplify/ui-vue": "^1.1.14",
+    "@nuxtjs/apollo": "^3.0.7",
     "@nuxtjs/axios": "^5.13.6",
+    "@vue-stripe/vue-stripe": "^4.2.5",
+    "aws-amplify": "^4.3.2",
+    "axios": "^0.21.4",
     "cookie-parser": "^1.4.5",
     "cookieparser": "^0.1.0",
     "core-js": "^3.15.1",
+    "graphql": "^15.6.1",
     "js-cookie": "^3.0.1",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.13.3",
     "nuxt-buefy": "^0.4.8",
+    "strapi-sdk-javascript": "^0.3.3",
+    "stripe": "^8.183.0",
     "vue-fullpage.js": "^0.1.7",
-    "vue-stripe-elements-plus": "^1.0.2"
+    "vue-stripe-elements-plus": "^1.0.2",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

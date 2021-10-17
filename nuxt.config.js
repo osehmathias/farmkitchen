@@ -22,7 +22,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/fullpage', mode: 'client' }
+    { src: '~/plugins/fullpage', mode: 'client' },
+    { src: '~/plugins/amplify', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,8 +33,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -43,6 +43,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios'
   ],
+
+  publicRuntimeConfig: {
+    stripe: process.env.STRIPE_PUBLISHABLE_KEY || ''
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
