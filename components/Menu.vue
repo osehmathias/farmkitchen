@@ -11,7 +11,7 @@
     </template>
 
     <template #end>
-      <b-navbar-item href="/functions">
+      <b-navbar-item href="/">
         Functions
       </b-navbar-item>
       <b-navbar-item href="/contact">
