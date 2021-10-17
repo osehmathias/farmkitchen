@@ -19,6 +19,9 @@
             <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
               Host your next function around a fire in a private garden. <br>We have a range of catering options available.<br>Suits up to 35 pax
             </p>
+            <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
+              354 Darling Street, Balmain NSW 2041
+            </p>
             <b-button class="mt-2" tag="router-link" to="#secondPage">
               <strong>Book Now: 0422 154 110</strong>
             </b-button>
@@ -57,6 +60,9 @@
             <h2 class="subtitle has-text-white">
               We would love to hear from you
             </h2>
+            <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
+              354 Darling Street, Balmain NSW 2041
+            </p>
             <div v-if="submitted !== true">
               <label class="has-text-white">Name</label>
               <b-input v-model="form.name" placeholder="John Doe" class="mb-4" />

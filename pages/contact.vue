@@ -5,6 +5,9 @@
         <h1 class="title">
           Contact Us
         </h1>
+        <p class="mt-2 subtitle has-text-weight-semibold">
+          354 Darling Street, Balmain NSW 2041
+        </p>
         <h2 class="subtitle">
           We would love to hear from you
         </h2>
