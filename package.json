@@ -13,6 +13,8 @@
   "dependencies": {
     "@aws-amplify/cli": "^4.13.2",
     "@aws-amplify/ui-vue": "^1.1.14",
+    "@egjs/vue-flicking": "^4.3.0",
+    "@egjs/vue-grid": "^1.6.0",
     "@nuxtjs/apollo": "^3.0.7",
     "@nuxtjs/axios": "^5.13.6",
     "@vue-stripe/vue-stripe": "^4.2.5",

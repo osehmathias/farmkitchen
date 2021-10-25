@@ -1,33 +1,25 @@
 <template>
   <div>
     <full-page id="fullpage" ref="fullpage" :options="options">
-      <div style="background-color: black;" class="section">
-        <div
-          style="
-          height: 100%;
-          width: 100%;
-          background-image: url('img/functions.webp');
-          background-position: center;
-          background-size: contain;
-          background-repeat: no-repeat;"
-          class="is-flex is-align-items-center is-justify-content-center"
-        >
-          <div class="has-text-centered">
-            <h1 class="title has-text-white">
-              Functions in the Garden
-            </h1>
-            <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
-              Host your next function around a fire in a private garden. <br>We have a range of catering options available.<br>Suits up to 35 pax
+      <div style="background-image: url('/img/front.webp'); height: 400px; background-position: center; padding: 0px" class="section">
+        <a href="#" class="overlay">
+          <p class="is-size-1 has-text-white has-text-weight-semibold">
+            Balmain Garden
+          </p>
+          <p class="is-size-3 has-text-white has-text-weight-semibold mb-5">
+            Restaurant / Cafe / Nursery / Venue
+          </p>
+          <div class="columns is-justify-content-center is-align-items-center"><div class="column is-two-thirds">
+            <p class="is-size-4 has-text-white has-text-weight-semibold mb-5">
+              Surround yourself with country at Farm Kitchen, bringing you good food, drink, and a backyard fire pit set in the garden
             </p>
-            <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
-              354 Darling Street, Balmain NSW 2041
-            </p>
-            <b-button class="mt-2" tag="router-link" to="#secondPage">
-              <strong>Book Now: 0422 154 110</strong>
+            <b-button size="is-medium" type="is-white">
+              Book Now
             </b-button>
-          </div>
-        </div>
+          </div></div>
+        </a>
       </div>
+
       <div
         style="background-color: black;"
         class="section"
@@ -48,6 +40,29 @@
               <li>- Pana cotta / Creme brulee</li>
               <li>- BYO wine and spirits</li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        style="background-color: black;"
+        class="section"
+      >
+        <div class="columns is-vcentered is-justify-content-center ">
+          <div class="column">
+            <Flicking :options="{ circular: true }">
+              <frame-grid
+                class="container"
+                :gap="gap"
+                :default-direction="defaultDirection"
+                :frame="frame"
+                :rect-size="rectSize"
+                :use-frame-fill="useFrameFill"
+              >
+                <div class="item" />
+                <div class="item" />
+                <div class="item" />
+              </frame-grid>
+            </Flicking>
           </div>
         </div>
       </div>
@@ -104,12 +119,24 @@
 
 <script>
 import axios from 'axios'
+import { Flicking } from '@egjs/vue-flicking'
+import { FrameGrid } from '@egjs/vue-grid'
+
 export default {
+  components: {
+    FrameGrid,
+    Flicking
+  },
   metaInfo: {
     title: 'Hello, world!'
   },
   data () {
     return {
+      gap: 5,
+      defaultDirection: 'end',
+      frame: [[1, 1, 2, 2], [3, 3, 2, 2], [4, 4, 4, 5]],
+      rectSize: 0,
+      useFrameFill: true,
       submitted: false,
       form: {
         name: ' ',
@@ -129,6 +156,7 @@ export default {
       }
     }
   },
+
   methods: {
     submitForm () {
       axios
@@ -155,5 +183,62 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+
+.overlay {
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    display: flex;
+    box-shadow: rgb(0 0 0 / 24%) 2px 3px 14px 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center
+}
+
+.item {
+  position: absolute;
+  width: 100px;
+  /* border: 1px solid #ccc; */
+  color: white;
+  text-align: center;
+}
+
+.item:nth-child(6n + 1) {
+    background-image: url('/img/skewers.webp');
+  background-size: cover;
+  background-position: center;
+    height: 200px;
+}
+
+.item:nth-child(6n + 2) {
+
+   background-image: url('/img/ormeat.webp');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.item:nth-child(6n + 3) {
+  background-image: url('/img/bbq.webp');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.item:nth-child(6n + 4) {
+  background: #4af;
+  height: 100px;
+}
+
+.item:nth-child(6n + 5) {
+  background: #ed5;
+  height: 150px;
+}
+.item:nth-child(6n + 6) {
+  background: #d5e;
+  height: 130px;
 }
 </style>
