@@ -79,26 +79,47 @@
               354 Darling Street, Balmain NSW 2041
             </p>
             <div v-if="submitted !== true">
-              <label class="has-text-white">Name</label>
-              <b-input v-model="form.name" placeholder="John Doe" class="mb-4" />
-
-              <label class="has-text-white ">Email</label>
-              <b-input
-                v-model="form.email"
-                type="email"
-                placeholder="john@doe.com"
-                maxlength="30"
-              />
-
-              <label class="has-text-white mb-1">Number</label>
-              <b-input v-model="form.phone" placeholder="0400 000 000" class="mb-4" />
-
-              <label class="has-text-white">Message</label>
-              <b-input v-model="form.message" maxlength="200" type="textarea" />
-
-              <b-button class="is-medium" @click.prevent="submitForm">
-                Submit
-              </b-button>
+              <div class="container mb-5">
+                <div class="columns">
+                  <div class="column">
+                    <b-field label="Name">
+                      <b-input v-model="form.fname" expanded placeholder="John" />
+                      <b-input v-model="form.lname" expanded placeholder="Doe" />
+                    </b-field>
+                    <b-field label="Email">
+                      <b-input
+                        v-model="form.email"
+                        placeholder="john@doe.com"
+                      />
+                    </b-field>
+                    <b-field label="Number">
+                      <b-input v-model="form.phone" placeholder="0400 000 000" />
+                    </b-field>
+                    <b-field label="PAX">
+                      <b-input v-model="form.adults" expanded placeholder="# of Adults" />
+                      <b-input v-model="form.children" expanded placeholder="# of Children" />
+                    </b-field>
+                    <b-button expanded class="is-medium" @click.prevent="submitForm">
+                      Submit
+                    </b-button>
+                    <!-- <b-field label="Message">
+                      <b-input v-model="form.message" type="textarea" />
+                    </b-field> -->
+                  </div>
+                  <div class="column">
+                    <b-field label="Date of booking">
+                      <b-datetimepicker
+                        v-model="form.date"
+                        inline
+                        placeholder="Select a date"
+                        icon="calendar-today"
+                        :timepicker="timepicker"
+                        horizontal-time-picker
+                      />
+                    </b-field>
+                  </div>
+                </div>
+              </div>
             </div>
             <div v-if="submitted == true">
               <article class="message is-success">
@@ -138,16 +159,23 @@ export default {
       rectSize: 0,
       useFrameFill: true,
       submitted: false,
+      timepicker: {
+        incrementMinutes: 15,
+        incrementHours: 1
+      },
       form: {
-        name: ' ',
-        email: ' ',
-        phone: ' ',
-        message: ' '
+        fname: '',
+        lname: '',
+        email: '',
+        phone: '',
+        adults: '',
+        children: '',
+        date: new Date()
       },
       options: {
         licenseKey: process.env.FULLSCREEN_LICENSE_KEY,
         navigation: true,
-        navigationTooltips: ['Start', 'First Meal', 'Second Meal', 'Third Meal', 'Fourth Meal'],
+        navigationTooltips: ['Start', 'Menu', 'Gallery', 'Contact'],
         navigationPosition: 'right',
         controlArrows: true,
         scrollBar: true,
@@ -161,7 +189,7 @@ export default {
     submitForm () {
       axios
         .post(
-          'https://l4k4qp7jt2.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm',
+          'https://6426e72xd0.execute-api.ap-southeast-2.amazonaws.com/prod/',
           this.form
         )
         .then((res) => {
@@ -181,6 +209,9 @@ export default {
 </script>
 
 <style>
+.label {
+  color: white
+}
 .home-links a {
   margin-right: 1rem;
 }
