@@ -1,0 +1,27 @@
+service: farmkitchen-form
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - mobiletargeting:SendMessages
+          Resource:
+            - "arn:aws:mobiletargeting:ap-southeast-2:485273623449:apps/275aeaff1c204626ad7b5d3d6f76ed03/*"
+  stage: prod
+  region: ap-southeast-2
+
+functions:
+  form:
+    handler: form.handler
+    events:
+      - http:
+          method: post
+          path: /
+          cors: true
+          # private: true
