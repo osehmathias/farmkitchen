@@ -99,9 +99,7 @@
                       <b-input v-model="form.adults" expanded placeholder="# of Adults" />
                       <b-input v-model="form.children" expanded placeholder="# of Children" />
                     </b-field>
-                    <b-button expanded class="is-medium" @click.prevent="submitForm">
-                      Submit
-                    </b-button>
+
                     <!-- <b-field label="Message">
                       <b-input v-model="form.message" type="textarea" />
                     </b-field> -->
@@ -119,6 +117,9 @@
                     </b-field>
                   </div>
                 </div>
+                <b-button expanded class="is-medium" @click.prevent="submitForm">
+                  Submit
+                </b-button>
               </div>
             </div>
             <div v-if="submitted == true">
@@ -149,7 +150,7 @@ export default {
     Flicking
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Home'
   },
   data () {
     return {
