@@ -82,6 +82,18 @@
               <div class="container mb-5">
                 <div class="columns">
                   <div class="column">
+                    <b-field label="Date of booking">
+                      <b-datetimepicker
+                        v-model="form.date"
+                        inline
+                        placeholder="Select a date"
+                        icon="calendar-today"
+                        :timepicker="timepicker"
+                        horizontal-time-picker
+                      />
+                    </b-field>
+                  </div>
+                  <div class="column">
                     <b-field label="Name">
                       <b-input v-model="form.fname" expanded placeholder="John" />
                       <b-input v-model="form.lname" expanded placeholder="Doe" />
@@ -99,27 +111,11 @@
                       <b-input v-model="form.adults" expanded placeholder="# of Adults" />
                       <b-input v-model="form.children" expanded placeholder="# of Children" />
                     </b-field>
-
-                    <!-- <b-field label="Message">
-                      <b-input v-model="form.message" type="textarea" />
-                    </b-field> -->
-                  </div>
-                  <div class="column">
-                    <b-field label="Date of booking">
-                      <b-datetimepicker
-                        v-model="form.date"
-                        inline
-                        placeholder="Select a date"
-                        icon="calendar-today"
-                        :timepicker="timepicker"
-                        horizontal-time-picker
-                      />
-                    </b-field>
+                    <b-button expanded class="is-medium" @click.prevent="submitForm">
+                      Submit
+                    </b-button>
                   </div>
                 </div>
-                <b-button expanded class="is-medium" @click.prevent="submitForm">
-                  Submit
-                </b-button>
               </div>
             </div>
             <div v-if="submitted == true">
