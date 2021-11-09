@@ -67,7 +67,7 @@
         </div>
       </div>
       <div style="background-color: black;" class="section">
-        <div class="is-flex is-justify-content-center">
+        <div class="is-flex is-justify-content-center columns">
           <div class="column is-two-thirds ">
             <h1 class="title has-text-white">
               Contact Us
