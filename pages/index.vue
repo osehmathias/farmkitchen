@@ -1,137 +1,136 @@
 <template>
   <div>
-    <full-page id="fullpage" ref="fullpage" :options="options">
-      <div style="background-image: url('/img/front.webp'); height: 400px; background-position: center; padding: 0px" class="section">
-        <a href="#" class="overlay">
-          <p class="is-size-1 has-text-white has-text-weight-semibold">
-            Balmain Garden
+    <div
+      style="background-image: url('/img/front.webp'); min-height: 100vh; background-position: center; padding: 0px"
+      class="section is-flex is-align-items-center"
+    >
+      <a href="#" class="overlay" style="min-height: 100vh; width: 100%">
+        <p class="is-size-1 has-text-white has-text-weight-semibold">
+          Balmain Garden
+        </p>
+        <p class="is-size-4 has-text-white has-text-weight-semibold mb-5">
+          Restaurant / Cafe / Nursery / Venue
+        </p>
+        <div class="columns is-justify-content-center is-align-items-center"><div class="column is-two-thirds">
+          <p class="is-size-4 has-text-white has-text-weight-semibold mb-5">
+            Surround yourself with country at Farm Kitchen, bringing you good food, drink, and a backyard fire pit set in the garden
           </p>
-          <p class="is-size-3 has-text-white has-text-weight-semibold mb-5">
-            Restaurant / Cafe / Nursery / Venue
-          </p>
-          <div class="columns is-justify-content-center is-align-items-center"><div class="column is-two-thirds">
-            <p class="is-size-4 has-text-white has-text-weight-semibold mb-5">
-              Surround yourself with country at Farm Kitchen, bringing you good food, drink, and a backyard fire pit set in the garden
-            </p>
-            <b-button size="is-medium" type="is-white">
-              Book Now
-            </b-button>
-          </div></div>
-        </a>
-      </div>
+          <b-button size="is-medium" type="is-white">
+            Book Now
+          </b-button>
+        </div></div>
+      </a>
+    </div>
 
-      <div
-        style="background-color: black;"
-        class="section"
-      >
-        <div class="columns">
-          <div class="column is-half">
-            <h2 class="has-text-centered title has-text-white">
-              Menu
-            </h2>
-          </div>
-          <div class="column is-half">
-            <p class="has-text-white has-text-weight-semibold mb-4">
-              Our usual catering spread includes
-            </p>
-            <ul class="has-text-white has-text-weight-semibold">
-              <li>- Lamb and Vegetable Skewers cooked over an open fire</li>
-              <li>- Traditional Paella in a giant pan</li>
-              <li>- Pana cotta / Creme brulee</li>
-              <li>- BYO wine and spirits</li>
-            </ul>
-          </div>
+    <div
+      class="has-background-black section is-medium is-align-content-center is-justify-content-center"
+    >
+      <div class="columns is-vcentered">
+        <div class="column is-half">
+          <h2 class="has-text-centered title has-text-white">
+            Menu
+          </h2>
+        </div>
+        <div class="column is-half">
+          <p class="has-text-white has-text-weight-semibold mb-4">
+            Our usual catering spread includes
+          </p>
+          <ul class="has-text-white has-text-weight-semibold">
+            <li>- Lamb and Vegetable Skewers cooked over an open fire</li>
+            <li>- Traditional Paella in a giant pan</li>
+            <li>- Pana cotta / Creme brulee</li>
+            <li>- BYO wine and spirits</li>
+          </ul>
         </div>
       </div>
-      <div
-        style="background-color: black;"
-        class="section"
-      >
-        <div class="columns is-vcentered is-justify-content-center ">
-          <div class="column">
-            <Flicking :options="{ circular: true }">
-              <frame-grid
-                class="container"
-                :gap="gap"
-                :default-direction="defaultDirection"
-                :frame="frame"
-                :rect-size="rectSize"
-                :use-frame-fill="useFrameFill"
-              >
-                <div class="item" />
-                <div class="item" />
-                <div class="item" />
-              </frame-grid>
-            </Flicking>
-          </div>
-        </div>
+    </div>
+
+    <div
+      class="has-background-black section is-medium is-align-items-center"
+    >
+      <div class="container">
+        <Flicking :options="{ circular: true }">
+          <frame-grid
+            class="container"
+            :gap="gap"
+            :default-direction="defaultDirection"
+            :frame="frame"
+            :rect-size="rectSize"
+            :use-frame-fill="useFrameFill"
+          >
+            <div class="item" />
+            <div class="item" />
+            <div class="item" />
+          </frame-grid>
+        </Flicking>
       </div>
-      <div style="background-color: black;" class="section">
-        <div class="is-flex is-justify-content-center columns">
-          <div class="column is-two-thirds ">
-            <h1 class="title has-text-white">
-              Contact Us
-            </h1>
-            <h2 class="subtitle has-text-white">
-              We would love to hear from you
-            </h2>
-            <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
-              354 Darling Street, Balmain NSW 2041
-            </p>
-            <div v-if="submitted !== true">
-              <div class="container mb-5">
-                <div class="columns">
-                  <div class="column">
-                    <b-field label="Date of booking">
-                      <b-datetimepicker
-                        v-model="form.date"
-                        inline
-                        placeholder="Select a date"
-                        icon="calendar-today"
-                        :timepicker="timepicker"
-                        horizontal-time-picker
-                      />
-                    </b-field>
-                  </div>
-                  <div class="column">
-                    <b-field label="Name">
-                      <b-input v-model="form.fname" expanded placeholder="John" />
-                      <b-input v-model="form.lname" expanded placeholder="Doe" />
-                    </b-field>
-                    <b-field label="Email">
-                      <b-input
-                        v-model="form.email"
-                        placeholder="john@doe.com"
-                      />
-                    </b-field>
-                    <b-field label="Number">
-                      <b-input v-model="form.phone" placeholder="0400 000 000" />
-                    </b-field>
-                    <b-field label="PAX">
-                      <b-input v-model="form.adults" expanded placeholder="# of Adults" />
-                      <b-input v-model="form.children" expanded placeholder="# of Children" />
-                    </b-field>
-                    <b-button expanded class="is-medium" @click.prevent="submitForm">
-                      Submit
-                    </b-button>
-                  </div>
+    </div>
+
+    <div class="section has-background-black section is-medium">
+      <div class="is-flex is-justify-content-center columns">
+        <div class="column is-two-thirds ">
+          <h1 class="title has-text-white">
+            Contact Us
+          </h1>
+          <h2 class="subtitle has-text-white">
+            We would love to hear from you
+          </h2>
+          <p class="mt-2 subtitle has-text-white has-text-weight-semibold">
+            354 Darling Street, Balmain NSW 2041
+          </p>
+          <div v-if="submitted !== true">
+            <div class="container mb-5">
+              <div class="columns">
+                <div class="column">
+                  <b-field label="Date of booking">
+                    <b-datetimepicker
+                      v-model="form.date"
+                      inline
+                      placeholder="Select a date"
+                      icon="calendar-today"
+                      :timepicker="timepicker"
+                      horizontal-time-picker
+                    />
+                  </b-field>
+                </div>
+                <div class="column">
+                  <b-field label="Name">
+                    <b-input v-model="form.fname" expanded placeholder="John" />
+                    <b-input v-model="form.lname" expanded placeholder="Doe" />
+                  </b-field>
+                  <b-field label="Email">
+                    <b-input
+                      v-model="form.email"
+                      placeholder="john@doe.com"
+                    />
+                  </b-field>
+                  <b-field label="Number">
+                    <b-input v-model="form.phone" placeholder="0400 000 000" />
+                  </b-field>
+                  <b-field label="PAX">
+                    <b-input v-model="form.adults" expanded placeholder="# of Adults" />
+                    <b-input v-model="form.children" expanded placeholder="# of Children" />
+                  </b-field>
+                  <b-button expanded class="is-medium" @click.prevent="submitForm">
+                    Submit
+                  </b-button>
                 </div>
               </div>
             </div>
-            <div v-if="submitted == true">
-              <article class="message is-success">
-                <div class="message-header">
-                  <p>Thank you</p>
-                </div>
-                <div class="message-body">
-                  We will be in touch with you soon
-                </div>
-              </article>
-            </div>
+          </div>
+          <div v-if="submitted == true">
+            <article class="message is-success">
+              <div class="message-header">
+                <p>Thank you</p>
+              </div>
+              <div class="message-body">
+                We will be in touch with you soon
+              </div>
+            </article>
           </div>
         </div>
       </div>
-    </full-page>
+    </div>
   </div>
 </template>
 
